@@ -1,0 +1,13 @@
+<h1>You're new here, <%= params[:name] %>!</h1>
+
+<%= form_for :user, url: "/create/#{params[:name]}" do |f| %>
+
+	<p>
+	<%= f.submit 'That\'s me!' %>
+	</p>
+
+<% end %>
+
+<p>
+	<%= link_to "Uh... nevermind.", '/hello' %>
+</p>
