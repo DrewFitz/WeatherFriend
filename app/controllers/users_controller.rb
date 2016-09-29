@@ -23,7 +23,11 @@ class UsersController < ApplicationController
 
 	# route: GET /new/:name
 	def new
-		# do nothing, just show confirmation page
+		# check if user exists, redirect if they do
+		@user = User.find_by name: params[:name]
+		if @user != nil
+			redirect_to "/#{params[:name]}"
+		end
 	end
 
 	# route: POST /create/:name
