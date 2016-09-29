@@ -6,8 +6,11 @@
 <p><%= link_to "#{location.city}, #{location.state}", "/#{@user.name}/#{location.id}" %></p>
 <% end %>
 
+<p>
+<h2>Add a location:</h1>
 <%= form_for :location, url: "/#{@user.name}/add_location" do |f| %>
-<%= f.text_field :city %>
-<%= f.text_field :state %>
+<%= f.text_field :city, placeholder: 'City' %>
+<%= f.text_field :state, placeholder: 'State Abbreviation' %>
 <%= f.submit %>
 <% end %>
+</p>

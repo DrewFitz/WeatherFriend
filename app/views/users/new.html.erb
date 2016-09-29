@@ -3,11 +3,11 @@
 <%= form_for :user, url: "/create/#{params[:name]}" do |f| %>
 
 	<p>
-	<%= f.submit 'That\'s me!' %>
+	<%= f.submit 'That\'s me!', id: 'submit' %>
 	</p>
 
 <% end %>
 
 <p>
-	<%= link_to "Uh... nevermind.", '/hello' %>
+	<%= link_to "Uh... nevermind.", '/' %>
 </p>
