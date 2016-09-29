@@ -1,24 +1,24 @@
-# README
+# WeatherFriend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a very simple app for getting the current weather conditions. Uses the Weather Underground API.
 
-Things you may want to cover:
+# Version Info
 
-* Ruby version
+This was built using Ruby 2.3.1 and Rails 5.0.0.1 on macOS Sierra.
 
-* System dependencies
+# Installation
 
-* Configuration
+1. git clone
+2. bundle install 
+	* Specifically requires the HTTParty gem for making API calls.
+3. rails db:migrate
+4. rails server
+5. Done!
 
-* Database creation
+# Usage Instructions
 
-* Database initialization
+The login system is very simple, only requiring a username. If the username doesn't exist yet, a confirmation page is shown, allowing users to double-check they provided the correct username.
 
-* How to run the test suite
+Once the user logs in, they see a list of their saved locations and a form to quickly save a new location. Clicking any location takes the user to the current weather report for that location.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If there's an problem retreiving the current weather report, the user is shown an error message.
