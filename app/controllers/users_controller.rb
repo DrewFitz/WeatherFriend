@@ -70,8 +70,18 @@ class UsersController < ApplicationController
 
 		@response = HTTParty.get("http://api.wunderground.com/api/235ebfbe56364355/conditions/q/#{@location.state.gsub(/ /, '_')}/#{@location.city.gsub(/ /, '_')}.json")
 		@error = nil
+
 		if @response['current_observation'] == nil
-			@error = "Couldn't get weather report. Probably an invalid location name."
+			@error = "Couldn't retreive weather report."
+			return
+		end
+
+		response_location = @response['current_observation']['display_location']
+		city_is_valid = response_location['city'] == @location.city
+		state_is_valid = response_location['state'] == @location.state || response_location['state_name'] == @location.state
+		if !(city_is_valid and state_is_valid)
+			@error = "Weather report didn't match city. Probably an invalid location name."
+			return
 		end
 	end
 end
