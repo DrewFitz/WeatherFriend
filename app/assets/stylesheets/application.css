@@ -20,20 +20,27 @@
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 2.5em;
+}
+
+h2 {
+	margin-top: 2em;
+	font-size: 1.8em;
 }
 
 input {
 	width: 100%;
+	font-size: 1.5em;
 }
 
 input#submit {
-    background-color: #ccc;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius:6px;
+    background-color: #aaa;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
     color: #fff;
     font-size: 1.5em;
+    font-weight: bold;
     text-decoration: none;
     border:none;
 }
@@ -43,6 +50,20 @@ input#submit:hover {
     background: #0dc;
     box-shadow: 0px 0px 1px #777;
 }
+
+p a {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+p a:visited {
+	color: black;
+}
+
+p a:hover {
+	color: #0dc;
+}
+
 
 p#temperature-display {
 	text-align: center;

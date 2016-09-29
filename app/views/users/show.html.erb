@@ -11,6 +11,6 @@
 <%= form_for :location, url: "/#{@user.name}/add_location" do |f| %>
 <%= f.text_field :city, placeholder: 'City' %>
 <%= f.text_field :state, placeholder: 'State Abbreviation' %>
-<%= f.submit %>
+<%= f.submit id: 'submit' %>
 <% end %>
 </p>
