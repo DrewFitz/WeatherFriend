@@ -63,3 +63,9 @@ div#application-wrapper {
 	margin: auto;
 }
 
+p#error-message {
+	font-size: 1.5em;
+	text-decoration: underline;
+	color: #b00;
+}
+

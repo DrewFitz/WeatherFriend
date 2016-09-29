@@ -44,5 +44,9 @@ class UsersController < ApplicationController
 		@location = Location.find(params[:location])
 
 		@response = HTTParty.get("http://api.wunderground.com/api/235ebfbe56364355/conditions/q/#{@location.state.gsub(/ /, '_')}/#{@location.city.gsub(/ /, '_')}.json")
+		@error = nil
+		if @response['current_observation'] == nil
+			@error = "Couldn't get weather report. Probably an invalid location name."
+		end
 	end
 end
