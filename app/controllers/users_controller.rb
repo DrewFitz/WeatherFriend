@@ -50,9 +50,17 @@ class UsersController < ApplicationController
 
 	# route: POST /:name/add_location
 	def add_location
-		# create the location and associate it with the user
-		@user = User.find_by name: params[:name]
-		@location = Location.create city: params[:location][:city], state: params[:location][:state], user: @user
+
+		city_name = params[:location][:city]
+		state_name = params[:location][:state]
+
+		# validate form input
+		if city_name != "" && state_name != ""
+			# create the location and associate it with the user
+			@user = User.find_by name: params[:name]
+			@location = Location.create city: city_name, state: state_name, user: @user
+		end 
+
 		# show the user their list of locations
 		redirect_to "/#{params[:name]}"	
 	end
