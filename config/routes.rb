@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get  '/new/:name', to: 'users#new'
   post '/create/:name', to: 'users#create'
   get  '/:name', to: 'users#show'
+  post '/:name/add_location', to: 'users#add_location'
+  get  '/:name/:location', to: 'users#forecast'
+  delete '/:name/:location', to: 'users#remove_location'
 
 end

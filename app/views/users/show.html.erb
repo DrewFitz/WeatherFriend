@@ -2,3 +2,12 @@
 	Welcome back, <%= @user.name %>!
 </h1>
 
+<% @user.locations.each do |location| %>
+<p><%= link_to "#{location.city}, #{location.state}", "/#{@user.name}/#{location.id}" %></p>
+<% end %>
+
+<%= form_for :location, url: "/#{@user.name}/add_location" do |f| %>
+<%= f.text_field :city %>
+<%= f.text_field :state %>
+<%= f.submit %>
+<% end %>

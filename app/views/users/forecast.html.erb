@@ -1,0 +1,4 @@
+<h1>Current conditions for <%= "#{@location.city}, #{@location.state}" %></h1>
+
+<p>Condition: <%= @response['current_observation']['weather'] %></p>
+<p>Temperature: <%= @response['current_observation']['temperature_string'] %></p>
